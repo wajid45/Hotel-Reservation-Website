@@ -1,0 +1,764 @@
+/* General Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgb(255, 255, 255);
+    color: #3af3ea;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keep header on top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: background-color 0.3s ease;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative; /* Required for dropdown */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #81d8d4;
+    transform: scale(1.1); /* Add scaling effect on hover */
+}
+
+/* Mobile Menu - Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    .search-bar {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .search-bar.active {
+        display: block;
+    }
+}
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    background: 
+        linear-gradient(to top, rgba(66, 66, 66, 0.5) 50%, rgba(66, 66, 66, 0.5)50%), 
+        url("img/bg3.jpg") center; 
+    background-size:  cover;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Vertically center the content */
+    text-align: left; /* Align the text to the left */
+}
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* Slight opacity for the background image */
+}
+
+.cta {
+    position: absolute;
+    z-index: 2; /* Ensure the text is above the image */
+    text-align: left;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.cta h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    font-weight: 300;
+}
+
+.cta .btn {
+    background-color: #81d8d4;
+    color: black;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background-color: burlywood;
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Reduce the height on smaller screens */
+    }
+
+    .cta h1 {
+        font-size: 2em; /* Adjust the font size for the title */
+    }
+
+    .cta p {
+        font-size: 1em; /* Adjust the paragraph font size */
+    }
+
+    .cta .btn {
+        font-size: 1em; /* Adjust the button font size */
+        padding: 12px 25px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .cta {
+        max-width: 90%; /* Allow the CTA section to expand on smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .cta h1 {
+        font-size: 1.8em;
+    }
+
+    .cta p {
+        font-size: 1em;
+    }
+}
+
+
+
+/* Rooms Section */
+#rooms {
+    padding: 60px 40px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#rooms h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+a {
+    text-decoration: none;
+}
+
+.room-card {
+    display: inline-block;
+    width: calc(33% - 40px); /* 3 columns with margin */
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-10px); /* Hover effect: lifts card up */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.room-card h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 15px;
+}
+
+.room-card p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.room-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.room-card ul li {
+    font-size: 1.1em;
+    color: #333;
+    margin: 8px 0;
+}
+
+.room-card .btn {
+    display: inline-block;
+    background-color: #81d8d4;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.room-card .btn:hover {
+    background-color: burlywood;
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .room-card {
+        width: calc(50% - 40px); /* Two columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .room-card {
+        width: 100%; /* Full width for mobile */
+        margin: 15px 0;
+    }
+
+    #rooms h2 {
+        font-size: 2em; /* Adjust heading size for mobile */
+    }
+}
+
+/* Room Detail Section */
+#room-details {
+    background-color: white;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#room-details h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.room-detail-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.room-detail-content img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-description {
+    flex: 1;
+    max-width: 600px;
+}
+
+.room-description h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.room-description ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.room-description ul li {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.room-description ul li::before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #81d8d4; /* Orange color for checkmark */
+}
+
+
+.room-slider {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-slider .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.room-slider .slider img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-slider .prev, .room-slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.room-slider .prev {
+    left: 5px;
+}
+
+.room-slider .next {
+    right: 5px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 24px;  /* Add padding for better button size */
+    background-color: #81d8d4;  /* Bright orange background */
+    color: white;  /* Text color white */
+    font-size: 1.1em;  /* Slightly larger text */
+    font-weight: bold;  /* Make the text bold */
+    text-align: center;  /* Center the text inside the button */
+    text-decoration: none;  /* Remove underline */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transitions */
+}
+
+.btn:hover {
+    background-color: burlywood;  /* Darker orange when hovered */
+    transform: translateY(-3px);  /* Slightly lift the button */
+}
+
+.btn:active {
+    background-color: #81d8d4;  /* Even darker orange when the button is pressed */
+    transform: translateY(0);  /* Reset button position when pressed */
+}
+.view-all-rooms-btn {
+    text-align: center; /* Centers the button */
+    margin-top: 30px; /* Adds space above the button */
+}
+.view-all-rooms-btn button {
+    background-color: #81d8d4; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+.view-all-rooms-btn button:hover {
+    background-color: burlywood; /* Darker blue on hover */
+}
+
+
+
+/* login and signup */
+body {
+    font-family: Arial, sans-serif;
+    background-image: 
+        linear-gradient(to top, rgba(66, 66, 66, 0.5) 50%, rgba(66, 66, 66, 0.5)50%), 
+        url("img/bg2.jpg"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Increased width */
+    border-radius: 8px;
+    margin-bottom: 30px; /* Gap from the bottom */
+    margin-top: 30px; /* Gap from the top */
+    text-align: center;
+}
+
+.form-container.hidden {
+    display: none;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+.toggle-form {
+    margin-top: 10px;
+}
+
+.toggle-form a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+/* Form Transition Animations */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animating the Toggle Between Forms */
+.hidden {
+    display: none;
+}
+
+form {
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+form:target {
+    animation: slideIn 0.5s ease-out;
+}
+
+
+
+
+/* About Section Styling */
+#about {
+    background-color: #ffffff; /* Change background to white */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    justify-content: center; /* Centers the content vertically */
+    text-align: left; /* Keeps the text aligned to the left */
+    padding: 50px 20px;
+}
+
+#about h2 {
+    font-size: 3rem; /* Increase the font size of the heading */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about > p {
+    text-align: justify; /* Justifies the paragraph text */
+    max-width: 800px; /* Optional: Limits paragraph width to make it easier to read */
+    margin: 0 auto; /* Centers the paragraph in the middle */
+    font-size: 1.2rem; /* Increase the font size of the paragraph */
+    line-height: 1.8; /* Adjust the line height for better readability */
+}
+
+/* Services Section Styling */
+#services {
+    background-color: #ffffff; /* Change background to white */
+    color: #333;
+    border-top: 2px solid #ddd;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    justify-content: center; /* Centers the content vertically */
+    text-align: left; /* Keeps the text aligned to the left */
+    padding: 50px 20px;
+}
+
+#services h2 {
+    font-size: 3rem; /* Increase the font size of the heading */
+    margin-bottom: 20px;
+    color: #333;
+}
+#services > p {
+    text-align: justify; /* Justifies the paragraph text */
+    max-width: 800px; /* Optional: Limits paragraph width to make it easier to read */
+    margin: 0 auto; /* Centers the paragraph in the middle */
+    font-size: 1.2rem; /* Increase the font size of the paragraph */
+    line-height: 1.8; /* Adjust the line height for better readability */
+}
+#services h3 {
+    font-size: 2rem; /* Increase the font size of the subheading */
+    margin-top: 30px;
+    color: #333;
+}
+
+#services ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-width: 800px; /* Optional: Limits the width to improve readability */
+    margin: 0 auto; /* Centers the list horizontally */
+}
+
+#services ul li {
+    font-size: 1.2rem; /* Increase the font size of the list items */
+    line-height: 1.8; /* Adjust line height for readability */
+    color: #666;
+    margin: 8px 0;
+    text-align: left; /* Keeps the list items left-aligned */
+}
+
+#services ul li::before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #81d8d4; /* Orange color for check mark */
+}
+
+
+
+
+/* Reservation Form Section */
+#reserve {
+    background:  linear-gradient(to top, rgba(66, 66, 66, 0.5) 50%, rgba(66, 66, 66, 0.5)50%), 
+    url("img/res2.jpg") center; 
+    background-size: cover;
+    background-position: center;
+    padding: 80px ; /* Add padding for spacing */
+    display: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full viewport height */
+    position: relative;
+    
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; width: 80%;
+    max-width: 650px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #81d8d4;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    background-color: #81d8d4;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #81d8d4;
+}
+
+select {
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1em;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select option {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Optional: Form container background and shadow for a polished look */
+#reserve {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.footer-contact p a {
+    color: #fff;
+    text-decoration: none;
+}
